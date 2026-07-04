@@ -1,0 +1,54 @@
+node_modules/
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+/bun.lockb
+
+.svelte-kit/
+dist/
+build/
+.vercel/
+.netlify/
+out/
+
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs and Debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# IDEs (VS Code, WebStorm, etc)
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+coverage/
+.nyc_output/
+.playwright/
+playwright-report/
+test-results/
