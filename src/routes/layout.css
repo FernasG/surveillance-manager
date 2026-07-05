@@ -1,1 +1,35 @@
 @import 'tailwindcss';
+
+@theme {
+	--color-bg: oklch(0.09 0 0);
+	--color-surface: oklch(0.16 0 0);
+	--color-surface-hover: oklch(0.2 0 0);
+	--color-border: oklch(0.28 0 0);
+	--color-ink: oklch(0.95 0.003 17.6);
+	--color-muted: oklch(0.62 0.01 17.6);
+	--color-primary: oklch(0.5 0.19 18);
+	--color-primary-hover: oklch(0.54 0.19 18);
+	--color-accent: oklch(0.62 0.14 165);
+
+	--font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+html {
+	color-scheme: dark;
+}
+
+body {
+	@apply min-h-screen bg-bg font-sans text-ink antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
