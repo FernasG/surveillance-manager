@@ -5,10 +5,11 @@
 
 	const navItems = [
 		{ label: 'Home', path: '/home' as const, icon: 'home' as const },
-		{ label: 'Video Archive', path: '/archive' as const, icon: 'archive' as const }
+		{ label: 'Video Archive', path: '/archive' as const, icon: 'archive' as const },
+		{ label: 'Semantic Search', path: '/search' as const, icon: 'search' as const }
 	];
 
-	function isActive(path: '/home' | '/archive'): boolean {
+	function isActive(path: '/home' | '/archive' | '/search'): boolean {
 		return page.url.pathname === resolve(path);
 	}
 </script>
@@ -63,7 +64,7 @@
 							<path d="M3 9.5L10 4l7 5.5" stroke-linecap="round" stroke-linejoin="round" />
 							<path d="M5 8.5V16h10V8.5" stroke-linecap="round" stroke-linejoin="round" />
 						</svg>
-					{:else}
+					{:else if item.icon === 'archive'}
 						<svg
 							viewBox="0 0 20 20"
 							fill="none"
@@ -75,6 +76,18 @@
 							<rect x="3" y="6" width="14" height="10" rx="1" />
 							<path d="M3 6l2-3h10l2 3" stroke-linecap="round" stroke-linejoin="round" />
 							<path d="M8.5 10.5l1.5 1.5 1.5-1.5" stroke-linecap="round" stroke-linejoin="round" />
+						</svg>
+					{:else}
+						<svg
+							viewBox="0 0 20 20"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.5"
+							class="h-full w-full"
+							aria-hidden="true"
+						>
+							<circle cx="8.5" cy="8.5" r="5" />
+							<path d="M15.5 15.5L12.5 12.5" stroke-linecap="round" />
 						</svg>
 					{/if}
 				</span>
