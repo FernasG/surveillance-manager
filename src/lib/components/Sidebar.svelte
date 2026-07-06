@@ -23,7 +23,7 @@
 			type="button"
 			onclick={toggleSidebar}
 			aria-label={isSidebarCollapsed() ? 'Expand sidebar' : 'Collapse sidebar'}
-			class="flex h-8 w-8 items-center justify-center rounded border border-border text-muted transition-colors duration-150 hover:border-primary hover:text-ink"
+			class="flex cursor-pointer h-8 w-8 items-center justify-center rounded border border-border text-muted transition-colors duration-150 hover:border-primary hover:text-ink"
 		>
 			<svg
 				class="h-4 w-4 transition-transform duration-200 ease-out"

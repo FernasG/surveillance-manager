@@ -20,7 +20,7 @@
 			<button
 				type="button"
 				onclick={handleSignOut}
-				class="rounded border border-border px-3 py-1.5 text-sm text-muted transition-colors duration-150 hover:border-primary hover:text-ink"
+				class="rounded cursor-pointer border border-border px-3 py-1.5 text-sm text-muted transition-colors duration-150 hover:border-primary hover:text-ink"
 			>
 				Sign out
 			</button>

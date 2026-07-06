@@ -36,7 +36,7 @@
 				type="button"
 				onclick={onClose}
 				aria-label="Close"
-				class="flex h-7 w-7 shrink-0 items-center justify-center rounded border border-border text-muted transition-colors duration-150 hover:border-primary hover:text-ink"
+				class="flex cursor-pointer h-7 w-7 shrink-0 items-center justify-center rounded border border-border text-muted transition-colors duration-150 hover:border-primary hover:text-ink"
 			>
 				<svg
 					viewBox="0 0 16 16"

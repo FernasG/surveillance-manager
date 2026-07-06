@@ -59,6 +59,11 @@
 	applyFilters();
 </script>
 
+<svelte:head>
+  <title>Pi Guard | Archive</title>
+  <meta name="description" content="Manage your videos archive." />
+</svelte:head>
+
 <div class="flex flex-col gap-6 p-6">
 	<div>
 		<h1 class="text-lg font-semibold text-ink">Video Archive</h1>
@@ -78,7 +83,7 @@
 				id="start_date"
 				type="date"
 				bind:value={startDate}
-				class="rounded border border-border bg-surface px-3 py-2 text-sm text-ink transition-colors duration-150 outline-none focus:border-primary"
+				class="rounded cursor-pointer border border-border bg-surface px-3 py-2 text-sm text-ink transition-colors duration-150 outline-none focus:border-primary"
 			/>
 		</div>
 		<div>
@@ -87,12 +92,12 @@
 				id="end_date"
 				type="date"
 				bind:value={endDate}
-				class="rounded border border-border bg-surface px-3 py-2 text-sm text-ink transition-colors duration-150 outline-none focus:border-primary"
+				class="rounded cursor-pointer border border-border bg-surface px-3 py-2 text-sm text-ink transition-colors duration-150 outline-none focus:border-primary"
 			/>
 		</div>
 		<button
 			type="submit"
-			class="rounded bg-primary px-4 py-2 text-sm font-medium text-ink transition-colors duration-150 hover:bg-primary-hover"
+			class="rounded cursor-pointer bg-primary px-4 py-2 text-sm font-medium text-ink transition-colors duration-150 hover:bg-primary-hover"
 		>
 			Apply filters
 		</button>
@@ -112,7 +117,7 @@
 				<button
 					type="button"
 					onclick={() => (selectedVideo = video)}
-					class="group flex flex-col overflow-hidden rounded border border-border bg-surface text-left transition-colors duration-150 hover:border-primary"
+					class="group flex cursor-pointer flex-col overflow-hidden rounded border border-border bg-surface text-left transition-colors duration-150 hover:border-primary"
 				>
 					<img
 						src={session ? buildMediaUrl(video.thumbnail_url, session) : video.thumbnail_url}
