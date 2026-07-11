@@ -60,5 +60,9 @@ export function buildMediaUrl(url: string, session: StoredSession): string {
 }
 
 export function videoStreamUrl(videoName: string, session: StoredSession): string {
-	return buildMediaUrl(`${PUBLIC_API_URL}/videos/${videoName}`, session);
+	return buildMediaUrl(`${PUBLIC_API_URL}/videos/${videoName}/playback`, session);
+}
+
+export function liveStreamUrl(session: StoredSession): string {
+	return buildMediaUrl(`${PUBLIC_API_URL}/videos/live`, session);
 }

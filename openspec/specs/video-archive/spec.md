@@ -59,7 +59,7 @@ The system SHALL use the pagination metadata (`page`, `total_pages`) from `GET /
 
 ### Requirement: Video playback on thumbnail selection
 
-The system SHALL open a centered playback overlay containing an HTML5 `<video controls autoplay>` element when a user selects a video's thumbnail, streaming from `GET /videos/{video_name}`.
+The system SHALL open a centered playback overlay containing an HTML5 `<video controls autoplay>` element when a user selects a video's thumbnail, streaming from `GET /videos/{video_name}/playback`.
 
 #### Scenario: User selects a video thumbnail
 
@@ -83,7 +83,7 @@ The system SHALL append the current session's access token as a `token` query pa
 #### Scenario: Playback overlay loads a video stream
 
 - **WHEN** the system opens the playback overlay for `cam1_1783291071.mp4`
-- **THEN** the `<video>` element's `src` is `http://localhost:8000/videos/cam1_1783291071.mp4?token={access_token}`
+- **THEN** the `<video>` element's `src` is `http://localhost:8000/videos/cam1_1783291071.mp4/playback?token={access_token}`
 
 #### Scenario: No active session
 

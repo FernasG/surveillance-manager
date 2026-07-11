@@ -54,5 +54,5 @@ export async function postQuery(text: string): Promise<QueryResult> {
 }
 
 export function searchResultStreamUrl(videoName: string, session: StoredSession): string {
-	return buildMediaUrl(`${PUBLIC_API_URL}/videos/${videoName}`, session);
+	return buildMediaUrl(`${PUBLIC_API_URL}/videos/${videoName}/playback`, session);
 }
