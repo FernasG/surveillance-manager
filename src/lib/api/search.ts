@@ -12,6 +12,15 @@ export type SearchResult = {
 
 export type QueryResult = { ok: true; data: SearchResult[] } | { ok: false; reason: 'server_error' };
 
+export type ConfidenceTier = 'excellent' | 'good' | 'low' | 'irrelevant';
+
+export function confidenceTier(score: number): ConfidenceTier {
+	if (score >= 0.85) return 'excellent';
+	if (score >= 0.7) return 'good';
+	if (score >= 0.5) return 'low';
+	return 'irrelevant';
+}
+
 function parseVideoName(videoPath: string): string {
 	const segments = videoPath.split('/');
 	return segments[segments.length - 1];

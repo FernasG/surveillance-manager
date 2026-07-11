@@ -10,6 +10,8 @@
 	--color-primary: oklch(0.5 0.19 18);
 	--color-primary-hover: oklch(0.54 0.19 18);
 	--color-accent: oklch(0.62 0.14 165);
+	--color-confidence-good: oklch(0.68 0.14 85);
+	--color-confidence-low: oklch(0.68 0.15 50);
 
 	--font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
 	--font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;

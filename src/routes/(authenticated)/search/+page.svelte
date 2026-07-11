@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { postQuery, searchResultStreamUrl, type SearchResult } from '$lib/api/search';
+	import {
+		confidenceTier,
+		postQuery,
+		searchResultStreamUrl,
+		type ConfidenceTier,
+		type SearchResult
+	} from '$lib/api/search';
 	import { getStoredSession } from '$lib/api/auth';
 	import SearchResultPlaybackModal from '$lib/components/SearchResultPlaybackModal.svelte';
 
@@ -12,6 +18,13 @@
 	let selectedResult = $state<SearchResult | null>(null);
 
 	const session = browser ? getStoredSession() : null;
+
+	const CONFIDENCE_COLOR: Record<ConfidenceTier, string> = {
+		excellent: 'text-accent',
+		good: 'text-confidence-good',
+		low: 'text-confidence-low',
+		irrelevant: 'text-muted'
+	};
 
 	function formatTimestamp(elapsedMs: number): string {
 		const totalSeconds = Math.floor(elapsedMs / 1000);
@@ -105,9 +118,16 @@
 					{/if}
 					<div class="flex flex-col gap-1.5 p-3">
 						<p class="text-sm text-ink group-hover:text-ink">{result.description}</p>
-						<div class="flex items-center justify-between font-mono text-xs text-muted">
-							<span>{formatTimestamp(result.elapsedMs)}</span>
-							<span>{Math.round(result.confidenceScore * 100)}%</span>
+						<div class="flex items-center justify-between font-mono text-xs">
+							<span class="text-muted">{formatTimestamp(result.elapsedMs)}</span>
+							<span
+								class="flex items-center gap-1.5 {CONFIDENCE_COLOR[
+									confidenceTier(result.confidenceScore)
+								]}"
+							>
+								<span class="h-1.5 w-1.5 shrink-0 rounded-full bg-current"></span>
+								{Math.round(result.confidenceScore * 100)}%
+							</span>
 						</div>
 					</div>
 				</button>
